@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.github.dcendents.android-maven' //jitpack 添加
+apply plugin: 'com.novoda.bintray-release' //jcenter 添加
 
-group = 'com.github.wangpengfei1992'
+group = 'com.github.wangpengfei1992'  //jitpack添加
 android {
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
@@ -31,4 +32,21 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.+'
     testCompile 'junit:junit:4.12'
     compile 'com.google.code.gson:gson:2.6.2'
+}
+
+
+//jcenter 添加
+publish{
+    repoName = 'MyMaven'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'wangpengfei1992'//bintray.com的用户名
+    groupId = 'com.wangpengfei1992'//jcenter上的路径
+    artifactId = 'baseutills'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = '描述，不重要'//描述，不重要
+    website = 'https://github.com/wangpengfei1992/BaseUtillsDemo.git'//项目主页
+}
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
 }
