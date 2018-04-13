@@ -1,8 +1,6 @@
 package com.wpf.baseutills;
 
-/**
- * Created by Gh0st on 2017/7/26.
- */
+
 
 public class RadixUtils {
     //16->2

@@ -16,9 +16,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.List;
 
-/**
- * Blog : http://blog.csdn.net/u011240877
- */
 public class NetUtils {
 
     public static final String NETWORK_TYPE_WIFI = "wifi";
