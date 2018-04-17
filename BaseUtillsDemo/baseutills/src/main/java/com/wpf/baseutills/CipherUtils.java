@@ -10,9 +10,7 @@ import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * Create by h4de5ing 2016/5/7 007
- */
+
 public class CipherUtils {
 
     public static String md5(String input) {
