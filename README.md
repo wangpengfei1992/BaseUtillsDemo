@@ -1,6 +1,11 @@
 # BaseUtillsDemo
 android常用工具栏收集，整理
 
+引用方式：在app.gradle中添加
+   dependencies {
+    compile 'com.github.wangpengfei1992:BaseUtillsDemo:1.0.0'
+   }
+
 
 
 •	
