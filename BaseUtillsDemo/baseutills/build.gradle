@@ -1,15 +1,12 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven' //jitpack 添加
-apply plugin: 'com.novoda.bintray-release' //jcenter 添加
-
 group = 'com.github.wangpengfei1992'  //jitpack添加
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 31
+    buildToolsVersion "31.0.0"
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 21
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -28,18 +25,23 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:27.+'
-    testCompile 'junit:junit:4.12'
-    compile 'com.google.code.gson:gson:2.6.2'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'com.google.code.gson:gson:2.6.2'
 }
 
 
 
-//jcenter 添加
+/*//jcenter 添加
 publish{
     repoName = 'MyMaven'//远程仓库名字,不指明，默认是上传到maven
     userOrg = 'wangpengfei1992'//bintray.com的用户名
@@ -48,7 +50,7 @@ publish{
     publishVersion = '1.0.0'//版本号
     desc = '描述，不重要'//描述，不重要
     website = 'https://github.com/wangpengfei1992/BaseUtillsDemo.git'//项目主页
-}
+}*/
 tasks.withType(Javadoc) {//防止编码问题
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('encoding', 'UTF-8')
